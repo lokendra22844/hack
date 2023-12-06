@@ -1,0 +1,112 @@
+--------------------------------------------------------- Topological sort------------------------------------------------
+
+The time complexity of the above code can be calculated as follows:
+
+To calculate the indegree of each node, we iterate through each edge once. This operation has a time complexity of O(E), where E is the number of edges.
+
+We create a stack to store the nodes with an indegree of 0. The size of the stack is at most equal to the number of nodes in the graph, which is denoted by N. Therefore, the space complexity of the stack is O(N).
+
+To perform DFS, we iterate through each edge once. This operation also has a time complexity of O(E).
+
+Popping elements from the stack and printing the topological sequence has a time complexity of O(N).
+
+Therefore, the overall time complexity of the above code is O(N + E).
+
+In terms of space complexity, the space required to store the graph, the indegree array, and the stack is at most O(N + E).
+
+These time and space complexities assume that the input graph is a Directed Acyclic Graph (DAG), as topological sorting is only defined for DAGs.
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------- quick sort------------------------------------------------
+
+
+The Quick Sort algorithm is based on the Divide and Conquer approach, which works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted.
+
+In terms of time complexity, the average case time complexity of Quick Sort is O(N log N), while the worst case time complexity is O(N^2). The best case time complexity of Quick Sort is O(N log N) even though the best case scenario doesn't require the partitioning step, as it directly results from the way Quick Sort is implemented.
+
+The worst case scenario for Quick Sort occurs when the partitioning process does not divide the array into two roughly equal halves. This can happen if the pivot selected is either the smallest or the largest element in the array, or if the input array is already sorted in decreasing order.
+
+In terms of space complexity, the Quick Sort algorithm has a space complexity of O(log N) because the depth of the recursion tree can go as deep as log N. However, in an iterative implementation, the space complexity would be O(1) as the iterative version does not require additional memory for the recursion stack.
+
+The average case time complexity of Quick Sort can be improved to O(N log log N) by using the Median of Three pivot selection method. However, this method can potentially increase the worst case time complexity to O(N^2) if the input array is already sorted.
+
+
+
+
+
+--------------------------------------------------------- merge  sort------------------------------------------------
+
+
+The time complexity of the merge sort algorithm is O(n log n). This is because the merge sort algorithm recursively splits the array into two halves, each half being recursively sorted. Therefore, the algorithm will split the array n times and sort each half, which requires n log n operations.
+
+The merge operation takes linear time to combine the two halves back together. Therefore, the merge operation does not significantly impact the overall time complexity of the merge sort algorithm.
+
+It is important to note that the time complexity of merge sort is sensitive to the input size, as the number of comparisons required to sort the input array increases as the size of the input array increases.
+
+The space complexity of the merge sort algorithm is also O(n), as it requires additional storage space to temporarily hold the elements being sorted during the merge process. However, this extra space is only required for the recursive call stack, and it does not contribute to the total number of operations.
+
+
+
+
+
+
+
+--------------------------------------------------------- selection,bubble ,insertion sort------------------------------------------------
+
+Selection Sort: The time complexity of the selection sort algorithm is O(n^2) in both the average and worst-case scenarios. This is because the algorithm has to compare each element with every other element in the array.
+
+Bubble Sort: The time complexity of the bubble sort algorithm is also O(n^2) in both the average and worst-case scenarios. This is because the algorithm repeatedly swaps adjacent elements until the entire array is sorted.
+
+Insertion Sort: The time complexity of the insertion sort algorithm is O(n^2) in the worst-case scenario, which occurs when the input array is in reverse order. However, in the average case, the time complexity of the insertion sort algorithm is O(n^2).
+
+These time complexities are due to the comparison-based nature of these sorting algorithms, which requires n(n-1)/2 comparisons in the worst case. Additionally, these time complexities do not take into account any extra space that might be required during the sorting process.
+
+
+
+
+
+------------------------------------------------warshall algorithm------------------------------------------------
+The given code implements the Floyd-Warshall algorithm for finding all-pairs shortest paths in a weighted graph.
+
+The Floyd-Warshall algorithm has a time complexity of O(n^3) due to the three nested loops in the code. These loops iterate over each pair of vertices (i, j) in the graph, and for each pair, the algorithm updates the shortest path from i to j through all intermediate vertices k.
+
+In terms of space complexity, the algorithm requires a matrix of size n x n to store the shortest paths between all pairs of vertices. Therefore, the space complexity of the Floyd-Warshall algorithm is O(n^2).
+
+Please note that the code does not actually calculate the shortest paths correctly, as it uses a boolean matrix (a[i][j]) instead of an integer matrix (p[i][j]) to store the distances. The boolean matrix should be replaced with an integer matrix to correctly implement the Floyd-Warshall algorithm.
+
+
+
+
+
+--------------------------------------------knapsack----------------------------------------------------
+The time complexity of the knapsack problem can vary depending on the implementation and the constraints of the problem.
+
+For a bottom-up dynamic programming approach, where each object's weight is considered individually and the weights are not allowed to repeat, the time complexity is O(nW), where n is the number of objects and W is the maximum weight capacity.
+
+If the objects' weights are allowed to repeat and the total number of unique weights is w, the time complexity becomes O(nw), where n is the number of objects and w is the total number of unique weights.
+
+For the top-down dynamic programming approach with memoization, the time complexity is O(nW), where n is the number of objects and W is the maximum weight capacity. However, this approach has a larger space complexity compared to the bottom-up approach, which can be O(nW) in the worst case.
+
+
+----------------------------------------- shortest paths to other vertices using Dijkstra’s algorithm----------
+
+
+The Dijkstra algorithm is used to find the shortest path between nodes in a graph. It utilizes a priority queue to efficiently select the node with the smallest distance from the source node.
+
+The time complexity of the Dijkstra algorithm is O((V+E) log V), where V is the number of vertices and E is the number of edges in the graph.
+
+The space complexity of the Dijkstra algorithm is O(V), which is required to store the distance array and the priority queue.
+
+---------------------------------------kruskal algo------------------------------------------
+Algorithm is O(E log E) and O(E log V) respectively, where E is the number of edges in the graph and V is the number of vertices.
+
+Kruskal’s algorithm is a greedy algorithm that finds a minimum spanning tree for a connected weighted graph. It works by adding edges to the MST in increasing order of their weight. The algorithm can be implemented using a priority queue.
+
+
