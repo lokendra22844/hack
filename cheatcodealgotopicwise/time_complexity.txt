@@ -110,3 +110,7 @@ Algorithm is O(E log E) and O(E log V) respectively, where E is the number of ed
 Kruskal’s algorithm is a greedy algorithm that finds a minimum spanning tree for a connected weighted graph. It works by adding edges to the MST in increasing order of their weight. The algorithm can be implemented using a priority queue.
 
 
+
+-------------------------------------travelling salesman-----------------------------------
+
+
