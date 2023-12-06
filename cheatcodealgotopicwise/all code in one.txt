@@ -1,0 +1,931 @@
+/**********************************************kruskal algorithm**************************************************************/
+
+// #include<stdio.h>
+// #include<conio.h>
+// #include<stdlib.h>
+// int i,j,k,a,b,u,v,n,ne=1;
+// int min,mincost=0,cost[9][9],parent[9];
+// int find(int);
+// int uni(int,int);
+// void main()
+// {
+	
+// 	printf("\n\tImplementation of Kruskal's algorithm\n");
+// 	printf("\nEnter the no. of vertices:");
+// 	scanf("%d",&n);
+// 	printf("\nEnter the cost adjacency matrix:\n");
+// 	for(i=1;i<=n;i++)
+// 	{
+// 		for(j=1;j<=n;j++)
+// 		{
+// 			scanf("%d",&cost[i][j]);
+// 			if(cost[i][j]==0)
+// 				cost[i][j]=999;
+// 		}
+// 	}
+// 	printf("The edges of Minimum Cost Spanning Tree are\n");
+// 	while(ne < n)
+// 	{
+// 		for(i=1,min=999;i<=n;i++)
+// 		{
+// 			for(j=1;j <= n;j++)
+// 			{
+// 				if(cost[i][j] < min)
+// 				{
+// 					min=cost[i][j];
+// 					a=u=i;
+// 					b=v=j;
+// 				}
+// 			}
+// 		}
+// 		u=find(u);
+// 		v=find(v);
+// 		if(uni(u,v))
+// 		{
+// 			printf("%d edge (%d,%d) =%d\n",ne++,a,b,min);
+// 			mincost +=min;
+// 		}
+// 		cost[a][b]=cost[b][a]=999;
+// 	}
+// 	printf("\n\tMinimum cost = %d\n",mincost);
+// 	getch();
+// }
+// int find(int i)
+// {
+// 	while(parent[i])
+// 	i=parent[i];
+// 	return i;
+// }
+// int uni(int i,int j)
+// {
+// 	if(i!=j)
+// 	{
+// 		parent[j]=i;
+// 		return 1;
+// 	}
+// 	return 0;
+// }
+
+
+
+
+/*******************************************quick sort********************************************************************/
+// #include<stdio.h>
+// #include<conio.h>
+ 
+// void quicksort(int arr[], int lb, int ub);
+ 
+// void main()
+ 
+// {
+ 
+// 	int arr[20], n, i;
+ 
+	
+ 
+// 	printf("\n\t\t\t------Quick Sort------\n\n");
+ 
+// 	printf("Enter the size of the array:");
+ 
+// 	scanf("%d",&n);
+ 
+// 	printf("Enter the elements to be sorted:\n");
+ 
+// 	for(i=0;i < n;i++)
+ 
+// 	scanf("%d",&arr[i]);
+ 
+// 	quicksort(arr, 0, n-1);
+ 
+// 	printf("\n\t\t\t-----Quick Sorted Elements-----\n\n");
+ 
+// 	printf("Sorted array:");
+ 
+// 	for(i = 0; i < n; i++)
+ 
+// 	printf("\t%d ",arr[i]);
+ 
+// 	getch();
+ 
+// }
+ 
+// void quicksort(int arr[], int lb, int ub)
+ 
+// {
+ 
+// 	int pivot, i, j, temp;
+ 
+// 	if(lb < ub)
+ 
+// 	{
+ 
+// 		pivot = lb;
+ 
+// 		i = lb;
+ 
+// 		j = ub;
+ 
+// 		while(i < j)
+ 
+// 		{
+ 
+// 			while(arr[i] <= arr[pivot] &&  i <= ub)
+ 
+// 			i++;
+ 
+// 			while(arr[j] > arr[pivot] && j >= lb)
+ 
+// 			j--;
+ 
+// 			if(i < j)
+ 
+// 			{
+ 
+// 				temp = arr[i];
+ 
+// 				arr[i] = arr[j];
+ 
+// 				arr[j] = temp;
+ 
+// 			}
+ 
+// 		}
+ 
+// 		temp = arr[j];
+ 
+// 		arr[j] = arr[pivot];
+ 
+// 		arr[pivot] = temp;
+ 
+// 		quicksort(arr, lb, j-1);
+ 
+// 		quicksort(arr, j+1, ub);
+ 
+// 	}
+ 
+// }
+
+
+/*******************************************************merge sort****************************************************************/
+
+// #include<stdio.h>
+// #include<conio.h>
+// int arr[20];       
+// void main()
+// {
+// 	int n,i;
+	
+// 	printf("\n\t\t\t------Merge Sorting------\n\n");
+// 	printf("Enter the size of array\n");
+// 	scanf("%d",&n);
+// 	printf("Enter the elements:\n");
+// 	for(i=0; i < n; i++)
+// 	{
+// 		scanf("%d",&arr[i]);
+// 	}
+// 	merge_sort(arr,0,n-1);
+// 	printf("\n\n\t\t\t-----Merge Sorted Elements-----\n\n");
+// 	printf("Sorted array:\t");
+// 	for(i=0; i < n; i++)
+// 	{
+// 		printf("\t%d",arr[i]);
+// 	}
+// 	getch();
+// }
+ 
+// int merge_sort(int arr[],int low,int high)
+// {
+// 	int mid;
+// 	if(low < high)
+// 	{
+// 		mid=(low+high)/2;
+// 		merge_sort(arr,low,mid);
+// 		merge_sort(arr,mid+1,high);
+// 		merge(arr,low,mid,high);
+// 	}
+// }
+// int merge(int arr[],int l,int m,int h)
+// {
+// 	int arr1[10],arr2[10];
+// 	int n1,n2,i,j,k;
+// 	n1=m-l+1;
+// 	n2=h-m;
+// 	for(i=0; i <  n1; i++)
+// 	{
+// 		arr1[i]=arr[l+i];
+// 	}
+// 	for(j=0; j < n2; j++)
+// 	{
+// 		arr2[j]=arr[m+j+1];
+// 	}
+// 	arr1[i]=9999;
+// 	arr2[j]=9999;
+// 	i=0;
+// 	j=0;
+// 	for(k=l; k <=h; k++)
+// 	{
+// 		if(arr1[i]<=arr2[j])
+// 			arr[k]=arr1[i++];
+// 		else
+// 			arr[k]=arr2[j++];
+// 	}
+// }
+
+
+/*************************************************************bubble sort****************************************************/
+// Optimized implementation of Bubble sort
+// #include <stdbool.h>
+// #include <stdio.h>
+
+// void swap(int* xp, int* yp)
+// {
+// 	int temp = *xp;
+// 	*xp = *yp;
+// 	*yp = temp;
+// }
+
+// // An optimized version of Bubble Sort
+// void bubbleSort(int arr[], int n)
+// {
+// 	int i, j;
+// 	bool swapped;
+// 	for (i = 0; i < n - 1; i++) {
+// 		swapped = false;
+// 		for (j = 0; j < n - i - 1; j++) {
+// 			if (arr[j] > arr[j + 1]) {
+// 				swap(&arr[j], &arr[j + 1]);
+// 				swapped = true;
+// 			}
+// 		}
+
+// 		// If no two elements were swapped by inner loop,
+// 		// then break
+// 		if (swapped == false)
+// 			break;
+// 	}
+// }
+
+// // Function to print an array
+// void printArray(int arr[], int size)
+// {
+// 	int i;
+// 	for (i = 0; i < size; i++)
+// 		printf("%d ", arr[i]);
+// }
+
+// // Driver program to test above functions
+// int main()
+// {
+// 	int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+// 	int n = sizeof(arr) / sizeof(arr[0]);
+// 	bubbleSort(arr, n);
+// 	printf("Sorted array: \n");
+// 	printArray(arr, n);
+// 	return 0;
+// }
+/***********************************************insertion sort***********************************************/
+// #include<stdio.h>
+// #include<conio.h>
+// void main()
+// {
+// 	int A[20],n,Temp,i,j;
+	
+// 	printf("\n\t\t\t-----INSERTION SORT-----\n\n");
+// 	printf("\n\n ENTER THE NUMBER OF TERMS...: ");
+// 	scanf("%d",&n);
+// 	printf("\n ENTER THE ELEMENTS OF THE ARRAY...:\n");
+// 	for(i=0; i < n;i++)
+// 	{
+// 		scanf("%d", &A[i]);
+// 	}
+// 	for(i=1; i< n; i++)
+// 	{
+// 		Temp = A[i];
+// 		j = i-1;
+// 		while(Temp < A[j] && j>=0)
+// 		{
+// 			A[j+1] = A[j];
+// 			j = j-1;
+// 		}
+// 		A[j+1] = Temp;
+// 	}
+// 	printf("\n\t\t\t-------INSERTION SORTED ELEMENTS------\n\n");
+// 	printf("\nTHE ASCENDING ORDER LIST IS...:");
+// 	for(i=0; i < n; i++)
+// 	{
+// 		printf("\t%d", A[i]);
+// 	}
+// 	getch();
+// }
+
+
+
+/*****************************************************selection sort***********************************************/
+// C program for implementation of selection sort
+// #include <stdio.h>
+
+// void swap(int *xp, int *yp)
+// {
+// 	int temp = *xp;
+// 	*xp = *yp;
+// 	*yp = temp;
+// }
+
+// void selectionSort(int arr[], int n)
+// {
+// 	int i, j, min_idx;
+
+// 	// One by one move boundary of unsorted subarray
+// 	for (i = 0; i < n-1; i++)
+// 	{
+// 		// Find the minimum element in unsorted array
+// 		min_idx = i;
+// 		for (j = i+1; j < n; j++)
+// 		if (arr[j] < arr[min_idx])
+// 			min_idx = j;
+
+// 		// Swap the found minimum element with the first element
+// 		if(min_idx != i)
+// 			swap(&arr[min_idx], &arr[i]);
+// 	}
+// }
+
+// /* Function to print an array */
+// void printArray(int arr[], int size)
+// {
+// 	int i;
+// 	for (i=0; i < size; i++)
+// 		printf("%d ", arr[i]);
+// 	printf("\n");
+// }
+
+// // Driver program to test above functions
+// int main()
+// {
+// 	int arr[] = {64, 25, 12, 22, 11};
+// 	int n = sizeof(arr)/sizeof(arr[0]);
+// 	selectionSort(arr, n);
+// 	printf("Sorted array: \n");
+// 	printArray(arr, n);
+// 	return 0;
+// }
+
+
+/**********************************************topological sort***************************************/
+// #include<stdio.h>
+// int a[10][10],n,indegre[10]; 
+// void find_indegre (){ 
+// int j,i,sum; 
+// for(j=0;j<n;j++) {
+
+// sum=0;
+// for(i=0;i<n;i++)
+// sum+=a[i][j];
+// indegre[j]=sum;
+// }
+// }
+// void topology(){
+// int i,u,v,t[10],s[10],top=-1,k=0; 
+// find_indegre();
+// for(i=0;i<n;i++){
+// if(indegre[i]==0)
+// s[++top]=i;
+// }
+// while(top!=-1) {
+// u=s[top--];
+// t[k++]=u; //top element of stack is stored in temporary array
+// for(v=0;v<n;v++){
+// if(a[u][v]==1){
+// indegre[v]--; 
+// if(indegre[v]==0) 
+// s[++top]=v; //Pushing adjacent vertex to stack
+// }
+// }
+// }
+// printf ("The topological Sequence is:\n"); 
+// for(i=0;i<n;i++)
+// printf ("%d ",t[i]);
+// }
+// void main(){
+// int i,j; 
+// printf("Enter number of jobs:"); 
+// scanf("%d",&n);
+// printf("\nEnter the adjacency matrix:\n"); 
+// for(i=0;i<n;i++){
+// for(j=0;j<n;j++)
+// scanf("%d",&a[i][j]);
+// }
+// topology();
+// }
+
+
+/******************************************warshall algorithm to find closure***********************************************/
+/*warshall algorithm work krta hai iis formula pe (A[i][k] + A[k][j]) if (A[i][j] > A[i][k] + A[k][j])**********************/
+
+
+// #include <stdio.h>
+// int n,a[10][10],p[10][10]; 
+// void path(){
+// int i,j,k; 
+// for(i=0;i<n;i++)
+// for(j=0;j<n;j++)
+// p[i][j]=a[i][j];
+// for(k=0;k<n;k++)
+// for(i=0;i<n;i++)
+// for(j=0;j<n;j++) 
+// if(p[i][k]==1&&p[k][j]==1)
+// p[i][j]=1;
+// }
+// void main(){
+// int i,j; 
+// printf("Enter the number of nodes:"); 
+// scanf("%d",&n);
+// printf("\nEnter the adjacency matrix:\n"); 
+// for(i=0;i<n;i++)
+// for(j=0;j<n;j++)
+// scanf("%d",&a[i][j]);
+// path();
+// printf("\nThe path matrix is shown below\n"); 
+// for(i=0;i<n;i++){
+// for(j=0;j<n;j++)
+// printf("%d ",p[i][j]); 
+// printf("\n");
+// }
+// }
+
+
+
+/***************************************************knapsack***************************************************/
+/*1st input 3 then profit and weight 1 2then profit and weight 2 3then profit and weight 5 4 output ill be 6*/
+/* explanation iisme max profit nikalna hota hai input me pehle constrant(mtlb limitation) dena hota hai phir weight 
+aor profit of objects dena hota hai , output max profit dega humko*/
+
+// #include<stdio.h>
+// int w[10],p[10],v[10][10],n,i,j,cap,x[10]={0};
+// int max(int i,int j){
+// return ((i>j)?i:j);
+// }
+// int knap(int i,int j){
+// int value; 
+// if(v[i][j]<0){
+// if(j<w[i])
+// value=knap(i-1,j);
+// else
+// value=max(knap(i-1,j),p[i]+knap(i-1,j-w[i])); 
+// v[i][j]=value;
+//  }
+// return(v[i][j]);
+// }
+// int main(){
+// int profit,count=0; 
+// printf("\nEnter the number of objects "); 
+// scanf("%d",&n);
+// printf("Enter the profit and weights of the elements \n "); 
+// for(i=1;i<=n;i++){
+// printf("\nEnter profit and weight For object no %d :",i);
+// scanf("%d%d",&p[i],&w[i]);
+// }
+// printf("\nEnter the capacity "); 
+// scanf("%d",&cap); 
+// for(i=0;i<=n;i++)
+// for(j=0;j<=cap;j++)
+// if((i==0)||(j==0))
+// v[i][j]=0;
+// else
+// v[i][j]=-1; 
+// profit=knap(n,cap);
+// i=n;
+// j=cap;
+// while(j!=0&&i!=0){
+// if(v[i][j]!=v[i-1][j]){
+// x[i]=1; 
+// j=j-w[i]; 
+// i--;
+// }
+// else
+// i--;
+// }
+// printf("object included are \n "); 
+// printf("Sl.no\tweight\tprofit\n"); 
+// for(i=1;i<=n;i++)
+// if(x[i])
+// printf("%d\t%d\t%d\n",++count,w[i],p[i]); 
+// printf("Total profit = %d\n",profit);
+// }
+
+
+/****************************************************shortest path algo using dijkstra’s algorithm****************************/
+/***************************working rule -->>dist[u]+cost[u][w]<dist[w])************************/
+
+// #include<stdio.h>
+// #define infinity 999
+// void dij(int n, int v,int cost[20][20], int dist[]){
+// int i,u,count,w,flag[20],min;
+// for(i=1;i<=n;i++)
+// flag[i]=0, dist[i]=cost[v][i];
+// count=2;
+// while(count<=n){
+// min=99;
+// for(w=1;w<=n;w++)
+// if(dist[w]<min && !flag[w]) {
+// min=dist[w];
+// u=w;
+// }
+// flag[u]=1;
+// count++;
+// for(w=1;w<=n;w++)
+// if((dist[u]+cost[u][w]<dist[w]) && !flag[w])
+// dist[w]=dist[u]+cost[u][w];
+// }
+// }
+// int main(){
+// int n,v,i,j,cost[20][20],dist[20];
+// printf("enter the number of nodes:");
+// scanf("%d",&n);
+// printf("\n enter the cost matrix:\n");
+// for(i=1;i<=n;i++)
+// for(j=1;j<=n;j++){
+// scanf("%d",&cost[i][j]);
+// if(cost[i][j] == 0)
+// cost[i][j]=infinity;
+// }
+// printf("\n enter the source matrix:");
+// scanf("%d",&v);
+// dij(n,v,cost,dist);
+// printf("\n shortest path : \n");
+// for(i=1;i<=n;i++)
+// if(i!=v)
+// printf("%d->%d,cost=%d\n",v,i,dist[i]);
+// }
+
+
+/*************************************graph traversal using bfs *******************************************/
+
+
+// #include<stdio.h>
+// #include<conio.h>
+// int a[20][20],q[20],visited[20],n,i,j,f=-1,r=0;
+// void bfs(int v){
+// q[++r]=v;
+// visited[v]=1;
+// while(f<=r) {
+// for(i=1;i<=n;i++)
+// if(a[v][i] && !visited[i]){
+// visited[i]=1;
+// q[++r]=i;
+//  }
+// f++;
+// v=q[f];
+// }
+// }
+// void main(){
+// int v;
+// printf("\n Enter the number of vertices:");
+// scanf("%d",&n);
+// for(i=1;i<=n;i++){
+//  q[i]=0;
+// visited[i]=0;
+// }
+// printf("\n Enter graph data in matrix form:\n");
+// for(i=1;i<=n;i++) 
+// for(j=1;j<=n;j++) 
+// scanf("%d",&a[i][j]);
+// printf("\n Enter the starting vertex:");
+// scanf("%d",&v);
+// bfs(v);
+// printf("\n The node which are reachable are:\n");
+// for(i=1;i<=n;i++)
+// if(visited[i])
+// printf("%d\t",q[i]);
+// else
+// printf("\n Bfs is not possible");
+// }
+
+
+/***************************graph traversal usind dfs******************************************/
+// DFS algorithm in C
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// struct node {
+//   int vertex;
+//   struct node* next;
+// };
+
+// struct node* createNode(int v);
+
+// struct Graph {
+//   int numVertices;
+//   int* visited;
+
+//   // We need int** to store a two dimensional array.
+//   // Similary, we need struct node** to store an array of Linked lists
+//   struct node** adjLists;
+// };
+
+// // DFS algo
+// void DFS(struct Graph* graph, int vertex) {
+//   struct node* adjList = graph->adjLists[vertex];
+//   struct node* temp = adjList;
+
+//   graph->visited[vertex] = 1;
+//   printf("Visited %d \n", vertex);
+
+//   while (temp != NULL) {
+//     int connectedVertex = temp->vertex;
+
+//     if (graph->visited[connectedVertex] == 0) {
+//       DFS(graph, connectedVertex);
+//     }
+//     temp = temp->next;
+//   }
+// }
+
+// // Create a node
+// struct node* createNode(int v) {
+//   struct node* newNode = malloc(sizeof(struct node));
+//   newNode->vertex = v;
+//   newNode->next = NULL;
+//   return newNode;
+// }
+
+// // Create graph
+// struct Graph* createGraph(int vertices) {
+//   struct Graph* graph = malloc(sizeof(struct Graph));
+//   graph->numVertices = vertices;
+
+//   graph->adjLists = malloc(vertices * sizeof(struct node*));
+
+//   graph->visited = malloc(vertices * sizeof(int));
+
+//   int i;
+//   for (i = 0; i < vertices; i++) {
+//     graph->adjLists[i] = NULL;
+//     graph->visited[i] = 0;
+//   }
+//   return graph;
+// }
+
+// // Add edge
+// void addEdge(struct Graph* graph, int src, int dest) {
+//   // Add edge from src to dest
+//   struct node* newNode = createNode(dest);
+//   newNode->next = graph->adjLists[src];
+//   graph->adjLists[src] = newNode;
+
+//   // Add edge from dest to src
+//   newNode = createNode(src);
+//   newNode->next = graph->adjLists[dest];
+//   graph->adjLists[dest] = newNode;
+// }
+
+// // Print the graph
+// void printGraph(struct Graph* graph) {
+//   int v;
+//   for (v = 0; v < graph->numVertices; v++) {
+//     struct node* temp = graph->adjLists[v];
+//     printf("\n Adjacency list of vertex %d\n ", v);
+//     while (temp) {
+//       printf("%d -> ", temp->vertex);
+//       temp = temp->next;
+//     }
+//     printf("\n");
+//   }
+// }
+
+// int main() {
+//   struct Graph* graph = createGraph(4);
+//   addEdge(graph, 0, 1);
+//   addEdge(graph, 0, 2);
+//   addEdge(graph, 1, 2);
+//   addEdge(graph, 2, 3);
+
+//   printGraph(graph);
+
+//   DFS(graph, 2);
+
+//   return 0;
+// }
+
+/******************************** Check whether a given graph is connected or not using DFS method****************************/
+
+// #include<stdio.h>
+// #include<conio.h>
+// int a[20][20],reach[20],n;
+// void dfs(int v) {
+// 	int i;
+// 	reach[v]=1;
+// 	for (i=1;i<=n;i++)
+// 	  if(a[v][i] && !reach[i]) {
+// 		printf("\n %d->%d",v,i);
+// 		dfs(i);
+// 	}
+// }
+// void main() {
+// 	int i,j,count=0;
+// 	clrscr();
+// 	printf("\n Enter number of vertices:");
+// 	scanf("%d",&n);
+// 	for (i=1;i<=n;i++) {
+// 		reach[i]=0;
+// 		for (j=1;j<=n;j++)
+// 		   a[i][j]=0;
+// 	}
+// 	printf("\n Enter the adjacency matrix:\n");
+// 	for (i=1;i<=n;i++)
+// 	  for (j=1;j<=n;j++)
+// 	   scanf("%d",&a[i][j]);
+// 	dfs(1);
+// 	printf("\n");
+// 	for (i=1;i<=n;i++) {
+// 		if(reach[i])
+// 		   count++;
+// 	}
+// 	if(count==n)
+// 	  printf("\n Graph is connected"); else
+// 	  printf("\n Graph is not connected");
+// 	getch();
+// }
+
+/***************************dfs*****************************************/
+/***************change your matrix accrding to question*****************/
+
+
+// #include<stdio.h>
+// #include<stdlib.h>
+ 
+// int visited[7] = {0,0,0,0,0,0,0};
+//     int A [7][7] = {
+//         {0,1,1,1,0,0,0},
+//         {1,0,1,0,0,0,0},
+//         {1,1,0,1,1,0,0},
+//         {1,0,1,0,1,0,0},
+//         {0,0,1,1,0,1,1},
+//         {0,0,0,0,1,0,0}, 
+//         {0,0,0,0,1,0,0} 
+//     };
+ 
+// void DFS(int i){
+//     printf("%d ", i);
+//     visited[i] = 1;
+//     for (int j = 0; j < 7; j++)
+//     {
+//         if(A[i][j]==1 && !visited[j]){
+//             DFS(j);
+//         }
+//     }
+// }
+ 
+// int main(){ 
+//     // DFS Implementation  
+//     DFS(0); 
+//     return 0;
+// }
+
+
+/********************************sum of sub set**************/
+/***************iisme input1 no of element of set input2 set data input3 sum kya chahiye set ke elements ka output number de dega jis jis se wo sum possible hai*/
+
+
+// #include<stdio.h>
+// #define TRUE 1
+// #define FALSE 0
+// int inc[50],w[50],sum,n;
+// void sumset(int ,int ,int);
+// int promising(int i,int wt,int total) {
+// return (((wt+total)>=sum)&&((wt==sum)||(wt+w[i+1]<=sum)));
+// }
+// void main() {
+// int i,j,n,temp,total=0;
+// printf("\n Enter how many numbers: ");
+// scanf("%d",&n);
+// printf("\n Enter %d numbers : ",n);
+// for (i=0;i<n;i++) {
+// scanf("%d",&w[i]);
+// total+=w[i];
+// }
+// printf("\n Input the sum value to create sub set: ");
+// scanf("%d",&sum);
+// for (i=0;i<=n;i++)
+// for (j=0;j<n-1;j++)
+// if(w[j]>w[j+1]) {
+// temp=w[j];
+// w[j]=w[j+1];
+// w[j+1]=temp;
+// }
+// printf("\n The given %d numbers in ascending order: ",n);
+// for (i=0;i<n;i++)
+// printf("%3d",w[i]);
+// if((total<sum))
+// printf("\n Subset construction is not possible");
+// else{
+// for (i=0;i<n;i++)
+// inc[i]=0;
+// printf("\n The solution using backtracking is:\n");
+// sumset(-1,0,total);
+// }
+// }
+// void sumset(int i,int wt,int total){
+// int j;
+// if(promising(i,wt,total)) {
+// if(wt==sum){
+// printf("\n{");
+// for (j=0;j<=i;j++)
+// if(inc[j])
+// printf("%3d",w[j]);
+// printf(" }\n");
+// } else {
+// inc[i+1]=TRUE;
+// sumset(i+1,wt+w[i+1],total-w[i+1]);
+// inc[i+1]=FALSE;
+// sumset(i+1,wt,total-w[i+1]);
+//  }
+// }
+// }
+
+
+
+/***********************travelling salesman problem*********************/
+/**** inputs
+  Enter n : 4
+Enter cost matrix
+0 10 15 20 5 0 9 10 6 13 0 12 8 8 9 0
+Enter source : 1  */
+// #include<stdio.h>
+// int s,c[100][100],ver; 
+// float optimum=999,sum; 
+// /* function to swap array elements */ 
+// void swap(int v[], int i, int j) { 
+// int t; 
+// t = v[i]; 
+// v[i] = v[j]; 
+// v[j] = t; 
+// }
+// /* recursive function to generate permutations */ 
+// void brute_force(int v[], int n, int i) { 
+// // this function generates the permutations of the array from element i to element n-1 
+// int j,sum1,k; 
+// //if we are at the end of the array, we have one permutation 
+// if (i == n) { 
+// if(v[0]==s) { 
+// for (j=0; j<n; j++) 
+// printf ("%d ", v[j]); 
+// sum1=0;
+// for( k=0;k<n-1;k++) { 
+// sum1=sum1+c[v[k]][v[k+1]]; 
+// } 
+// sum1=sum1+c[v[n-1]][s]; 
+// printf("sum = %d\n",sum1); 
+// if (sum1<optimum) 
+// optimum=sum1; 
+// } 
+// } 
+// else
+// // recursively explore the permutations starting at index i going through index n-1*/ 
+// for (j=i; j<n; j++) { /* try the array with i and j switched */ 
+// swap (v, i, j); 
+// brute_force (v, n, i+1); 
+// /* swap them back the way they were */ 
+// swap (v, i, j); 
+// } 
+// } 
+// void nearest_neighbour(int ver) { 
+// int min,p,i,j,vis[20],from; 
+// for(i=1;i<=ver;i++) 
+// vis[i]=0; 
+// vis[s]=1; 
+// from=s; 
+// sum=0; 
+// for(j=1;j<ver;j++) { 
+// min=999; 
+// for(i=1;i<=ver;i++) 
+// if(vis[i] !=1 &&c[from][i]<min && c[from][i] !=0 ) { 
+// min= c[from][i]; 
+// p=i; 
+// } 
+// vis[p]=1; 
+// from=p; 
+// sum=sum+min; 
+// } 
+// sum=sum+c[from][s]; 
+// } 
+// void main () { 
+// int ver,v[100],i,j; 
+// printf("Enter n : "); 
+// scanf("%d",&ver); 
+// for (i=0; i<ver; i++) 
+// v[i] = i+1; 
+// printf("Enter cost matrix\n"); 
+// for(i=1;i<=ver;i++) 
+// for(j=1;j<=ver;j++) 
+// scanf("%d",&c[i][j]); 
+// printf("\nEnter source : "); 
+// scanf("%d",&s);
+// brute_force (v, ver, 0); 
+// printf("\nOptimum solution with brute force technique is=%f\n",optimum); 
+// nearest_neighbour(ver); 
+// printf("\nSolution with nearest neighbour technique is=%f\n",sum); 
+// printf("The approximation val is=%f",((sum/optimum)-1)*100); 
+
+// }
